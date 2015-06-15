@@ -1,95 +1,180 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet"  type="text/css" href="static/js/Semantic-UI-1.11.6/dist/semantic.min.css">
 
 <script type="text/javascript" src="static/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="static/js/validacao.js"></script>
+<script type="text/javascript" src="static/js/main.js"></script>
 <script type="text/javascript" src="static/js/Semantic-UI-1.11.6/dist/semantic.min.js"></script>
 </head>
 <body>
 <!-- MENU -->
 <div class="ui fluid four item menu">
-  <a class="item">DELETE</a>
-  <a class="item">GET</a>
-  <a class="item">POST</a>
-  <a class="item">PUT</a>
+  <a class="item" id='Delete'>DELETE</a>
+  <a class="item" id='Get'>GET</a>
+  <a class="item" id='Post'>POST</a>
+  <a class="item" id='Put'>PUT</a>
 </div>
 
-<!-- FORM -->
+<!-- FORM DELETE -->
+<div class='formulario' id='formularioDelete'>
 <div class="ui two column grid">
+	<h1>DELETE</h1>
 	<div class="column">
-		<div class="ui error form segment">
-		  <div class="two fields">
+		<form class="ui form segment"  method="post">
 		    <div class="field">
-		      <label>First Name</label>
-		      <input placeholder="First Name" type="text">
+		      <label>Username</label>
+		      <input placeholder="Username" name="username" type="text">
 		    </div>
 		    <div class="field">
-		      <label>Last Name</label>
-		      <input placeholder="Last Name" type="text">
+		      <label>Password</label>
+		      <input type="password" name="password" placeholder="password">
 		    </div>
-		  </div>
-		  <div class="field">
-		    <label>Gender</label>
-		    <div class="ui selection dropdown">
-		      <div class="default text">Select Gender</div>
-		      <i class="dropdown icon"></i>
-		      <input type="hidden" name="gender">
-		      <div class="menu">
-		        <div class="item" data-value="male">Male</div>
-		        <div class="item" data-value="female">Female</div>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="field">
-		    <label>Username</label>
-		    <input placeholder="Username" type="text">
-		  </div>
-		  <div class="field">
-		    <label>Password</label>
-		    <input type="password">
-		  </div>
-		  <div class="ui submit button">Submit</div>
-		</div>
+		    <div class="ui blue submit button">Submit</div>
+		    <div class="ui error message"></div>
+		 </form>
 	</div>
 	
 	<div class="column">
-		<div class="ui error form segment">
-		  <div class="two fields">
-		    <div class="field">
-		      <label>First Name</label>
-		      <input placeholder="First Name" type="text">
-		    </div>
-		    <div class="field">
-		      <label>Last Name</label>
-		      <input placeholder="Last Name" type="text">
-		    </div>
-		  </div>
-		  <div class="field">
-		    <label>Gender</label>
-		    <div class="ui selection dropdown">
-		      <div class="default text">Select Gender</div>
-		      <i class="dropdown icon"></i>
-		      <input type="hidden" name="gender">
-		      <div class="menu">
-		        <div class="item" data-value="male">Male</div>
-		        <div class="item" data-value="female">Female</div>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="field">
-		    <label>Username</label>
-		    <input placeholder="Username" type="text">
-		  </div>
-		  <div class="field">
-		    <label>Password</label>
-		    <input type="password">
-		  </div>
-		  <div class="ui submit button">Submit</div>
-		</div>
+		<table style="width:100%">
+		  <tr>
+		    <td>First Name</td>
+		    <td>Last Name</td>		
+		    <td>Username</td>
+		  </tr>
+		</table>
 	</div>
-	
 </div>
+</div>
+
+<!-- FORM GET -->
+<div class='formulario' id='formularioGet'>
+<div class="ui two column grid">
+	<h1>GET</h1>
+	<div class="column">
+		<form class="ui form segment"  method="post">
+		    <div class="two fields">
+		      <div class="field">
+		        <label>Username</label>
+		        <input placeholder="Username" name="username" type="text">
+		      </div>
+		    </div>
+		    <div class="field">
+		      <label>Password</label>
+		      <input type="password" name="password" placeholder="password">
+		    </div>
+		    <div class="ui blue submit button">Submit</div>
+		    <div class="ui error message"></div>
+		 </form>
+	</div>
+	
+	<div class="column">
+		<table style="width:100%">
+		  <tr>
+		    <td>First Name</td>
+		    <td>Last Name</td>		
+		    <td>Username</td>
+		  </tr>
+		</table>
+	</div>
+</div>
+</div>
+
+<!-- FORM POST -->
+<div class='formulario' id='formularioPost'>
+<div class="ui two column grid">
+	<h1>POST</h1>
+	<div class="column">
+		<form class="ui form segment"  method="post">
+		    <div class="two fields">
+		      <div class="field">
+		        <label>First Name</label>
+		        <input placeholder="First Name" name="firstname" type="text">
+		      </div>
+		      <div class="field">
+		        <label>Last Name</label>
+		        <input placeholder="Last Name" name="lastname" type="text">
+		      </div>
+		    </div>
+		    <div class="field">
+		      <label>Username</label>
+		      <input placeholder="Username" name="username" type="text">
+		    </div>
+		    <div class="field">
+		      <label>Password</label>
+		      <input type="password" name="password" placeholder="password">
+		    </div>
+		    <div class="field">
+		      <label>Password Confirm</label>
+		      <input type="password" name="password-confirm" placeholder="confirm password">
+		    </div>
+		    <div class="ui blue submit button">Submit</div>
+		    <div class="ui reset button">Reset</div>
+    		<div class="ui clear button">Clear</div>
+		    <div class="ui error message"></div>
+		 </form>
+	</div>
+	
+	<div class="column">
+		<table style="width:100%">
+		  <tr>
+		    <td>First Name</td>
+		    <td>Last Name</td>		
+		    <td>Username</td>
+		  </tr>
+		</table>
+	</div>
+</div>
+</div>
+
+<!-- FORM PUT -->
+<div class='formulario' id='formularioPut'>
+<div class="ui two column grid">
+	<h1>UPDATE</h1>
+	<div class="column">
+		<form class="ui form segment"  method="post">
+		    <div class="two fields">
+		      <div class="field">
+		        <label>First Name</label>
+		        <input placeholder="First Name" name="firstname" type="text">
+		      </div>
+		      <div class="field">
+		        <label>Last Name</label>
+		        <input placeholder="Last Name" name="lastname" type="text">
+		      </div>
+		    </div>
+		    <div class="field">
+		      <label>Username</label>
+		      <input placeholder="Username" name="username" type="text">
+		    </div>
+		    <div class="field">
+		      <label>Password</label>
+		      <input type="password" name="password" placeholder="password">
+		    </div>
+		    <div class="field">
+		      <label>Password Confirm</label>
+		      <input type="password" name="password-confirm" placeholder="confirm password">
+		    </div>
+		    <div class="ui blue submit button">Submit</div>
+		    <div class="ui reset button">Reset</div>
+    		<div class="ui clear button">Clear</div>
+		    <div class="ui error message"></div>
+		 </form>
+	</div>
+	
+	<div class="column">
+		<table style="width:100%">
+		  <tr>
+		    <td>First Name</td>
+		    <td>Last Name</td>		
+		    <td>Username</td>
+		  </tr>
+		</table>
+	</div>
+</div>
+</div>
+
 </html>
